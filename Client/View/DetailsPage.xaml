@@ -18,7 +18,7 @@
                 <CarouselView ItemsSource="{Binding FotoImages}">
                     <CarouselView.ItemTemplate>
                         <DataTemplate>
-                            <Frame WidthRequest="10" HeightRequest="20" Padding="0" BorderColor="Transparent" >
+                            <Frame Padding="0" BorderColor="Transparent" >
                                 <Image Source="{Binding .}" Aspect="AspectFill"/>
                             </Frame>
                         </DataTemplate>
@@ -26,7 +26,7 @@
                 </CarouselView>
             </Border>
             <Border StrokeShape="RoundRectangle 50,50,50,50" Stroke="{StaticResource Quartiary}" Padding="5" BackgroundColor="{StaticResource Quartiary}">
-                <Frame CornerRadius="30" Padding="0" HeightRequest="10" BorderColor="Transparent">
+                <Frame CornerRadius="30" Padding="0"  BorderColor="Transparent">
                     <Image Source="{Binding RicettaVisualizzata.URLFotoUtente}" Aspect="AspectFill"/>
                 </Frame>
             </Border>
