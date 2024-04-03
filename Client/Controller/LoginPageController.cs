@@ -37,7 +37,7 @@ namespace Client.Controller
             username = Preferences.Get("Username", string.Empty);
             password = Preferences.Get("Password", string.Empty);
 
-            //TestPreference();
+            TestPreference();
 
         }
 
@@ -117,11 +117,13 @@ namespace Client.Controller
                 }
                 else
                 {
-                    await App.Current.MainPage.DisplayAlert("Errore", "", "ok");
+                    Message = "Credenziali Errate";
                 }
             }
             catch (Exception e)
             {
+                await App.Current.MainPage.DisplayAlert("Errore", "", "ok");
+
             }
         }
 

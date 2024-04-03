@@ -6,17 +6,30 @@
              xmlns:Controller ="clr-namespace:Client.Controller"
              x:DataType="Controller:LoginPageController"
              BackgroundColor="{StaticResource Quartiary}">
-    <VerticalStackLayout>
-        <Image Source="https://raw.githubusercontent.com/Pietropanzeri/ProgettoGit_TPS/main/Docs/IconaApp.png"/>
-        <Entry Placeholder="Username" x:Name="entryUsername" Text="{Binding ViewUsername}" TextColor="Black"/>
-        <Entry Placeholder="Password" x:Name="entryPassword" Text="{Binding ViewPassword}" IsPassword="True" TextColor="Black"/>
-        <Label Text="{Binding Message}"/>
-        <Label Text="ricordami"/>
-        <Switch IsToggled="{Binding SalvaCredenziali}" OnColor="Black" ThumbColor="Grey"/>
-        <Label Text="crea utente"/>
-        <Switch IsToggled="{Binding CreaUtente}" OnColor="Black" ThumbColor="Grey"/>
-        <Button Command="{Binding LoginCommand}" BackgroundColor="{StaticResource Tertiary}" Margin="10"/>
+    <Grid RowDefinitions="3*,2.5*,*,*" Margin="40">
+        <Border StrokeShape="Ellipse" Grid.ColumnSpan="2" Stroke="transparent" WidthRequest="200" HeightRequest="200" Margin="0,0,0,40">
+            <Frame Padding="0" BorderColor="Transparent" >
+                <Image Source="icon.svg" Aspect="AspectFill"/>
+            </Frame>
+        </Border>
+        <Grid Grid.Row="1" RowDefinitions="2*,2*,*">
+            <Entry Placeholder="Username" x:Name="entryUsername" Text="{Binding ViewUsername}" TextColor="Black" Margin="0,0,0,30"/>
+            <Entry Placeholder="Password" x:Name="entryPassword" Text="{Binding ViewPassword}" IsPassword="True" TextColor="Black" Grid.Row="1" Margin="0,0,0,30"/>
+
+            <Label Text="{Binding Message}" TextColor="Red" VerticalOptions="Start" Grid.Row="2"/>
+        </Grid>
+        <VerticalStackLayout Grid.Row="2" Padding="0">
+            <HorizontalStackLayout Padding="0" VerticalOptions="Start">
+                <CheckBox IsChecked="{Binding SalvaCredenziali}" Color="{StaticResource Tertiary}" VerticalOptions="Center"/>
+                <Label Text="Ricordami" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout >
+                <CheckBox IsChecked="{Binding CreaUtente}" Color="{StaticResource Tertiary}" VerticalOptions="Center"/>
+                <Label Text="Crea Utenza" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+        <Button Command="{Binding LoginCommand}" BackgroundColor="{StaticResource Tertiary}" Margin="20" Grid.Row="3" CornerRadius="100" Text="LOGIN"/>
 
 
-    </VerticalStackLayout>
+    </Grid>
 </ContentPage>
